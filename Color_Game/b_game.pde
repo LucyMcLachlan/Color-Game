@@ -3,12 +3,14 @@ void game() {
   fill(#FFFFFF);
   stroke(#FFFFFF);
   rect(width/2, 0, width/2, height);
+  //text
   text("True", width/4, height/6);
   fill(0);
   text("False", width/1.35, height/6);
   fill(colors[c]);
   stroke(colors[c]);
   text(words[w], width/2, height/2);
+  //timer
   timer=timer+10;
   rect(0, height-50, timer, height);
   if (timer>=width) {
@@ -18,7 +20,7 @@ void game() {
 }
 
 void gameClicks() {
-
+  //scoring
   if (c==w && mouseX<=width/2) {
     score=score+1;
     timer=0;
@@ -29,12 +31,17 @@ void gameClicks() {
     score=score+1;
     timer=0;
   }
+  //randomization
   r=int(random(0, 2));
   if (r==0) {
     w=int(random(0, 8));
     c=int(random(0, 8));
+    while (w==c) {
+      w=int(random(0, 8));
+      c=int(random(0, 8));
+    }
   }
-  if (r>=1) {
+  if (r>0) {
     w=int(random(0, 8));
     c=w;
   }

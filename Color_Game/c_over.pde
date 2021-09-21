@@ -11,4 +11,7 @@ void over() {
 
 void overClicks() {
   mode=INTRO;
+  //reset 
+  score=0;
+  timer=0;
 }

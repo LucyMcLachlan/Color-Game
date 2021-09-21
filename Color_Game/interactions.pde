@@ -1,5 +1,5 @@
-void mouseReleased(){
-if(mode==INTRO)introClicks();
-else if (mode==GAME)gameClicks();
-else if (mode==OVER)overClicks();
+void mouseReleased() {
+  if (mode==INTRO)introClicks();
+  else if (mode==GAME)gameClicks();
+  else if (mode==OVER)overClicks();
 }

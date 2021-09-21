@@ -1,4 +1,5 @@
 //Lucy McLachlan
+//sept 21
 //Color game
 
 color purple = #8D2BCB, red = #980F0F, green=#27622D, blue=#25427E, orange=#C66912, teal=#12C692, yellow=#EAEA53, pink=#EA53AC;
@@ -6,15 +7,12 @@ color purple = #8D2BCB, red = #980F0F, green=#27622D, blue=#25427E, orange=#C669
 //score vars
 int score;
 int highScore;
+
 // timer
 int timer;
 //font var
-PFont sketch;
 
-//gif var
-PImage[] paint;
-int frames = 4;
-int f;
+PFont sketch;
 
 //mode framework vars
 int mode;
@@ -28,6 +26,12 @@ String[] words;
 color[] colors;
 
 int w, c, r;
+
+//gif var
+PImage[] paint;
+int pframes = 4;
+int pf;
+
 
 void setup() {
   mode = INTRO;
@@ -64,8 +68,21 @@ void setup() {
 
   words[7]="Pink";
   colors[7]=pink;
-  
+
   timer=0;
+
+
+  //gif 
+  paint= new PImage[pframes];
+  int i=0;
+  while (i<pframes) {
+    paint[i]=loadImage("frame_"+i+"_delay-0.15s.gif");
+    i++;
+  }
+  if (i==pframes) {
+    i=0;
+  }
+  
 }
 
 void draw() {
