@@ -82,7 +82,6 @@ void setup() {
   if (i==pframes) {
     i=0;
   }
-  
 }
 
 void draw() {

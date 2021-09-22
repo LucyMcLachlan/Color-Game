@@ -11,7 +11,9 @@ void game() {
   stroke(colors[c]);
   text(words[w], width/2, height/2);
   //timer
-  timer=timer+10;
+  if (score<=15) timer=timer+8;
+  else if (score>15 && score<=30) timer=timer+10;
+  else if (score>30) timer=timer+13;
   rect(0, height-50, timer, height);
   if (timer>=width) {
     mode=OVER;
